@@ -1,0 +1,50 @@
+---
+title: "Assignment title"
+subtitle: "Course name"
+author:
+  - name: "Your name"
+    mail: "Your email"
+date: today
+# Comment these to skip bibliography:
+#====================
+bibliography: references.bibtex
+biblio-style: ieee
+cite-method: biblatex
+#====================
+# You can modify these:
+#====================
+lof: true # List of figures
+toc: true # Table of contents
+toc-depth: 2
+number-sections: true
+#====================
+---
+
+# Title
+
+Lorem ipsum dolor sit amet.
+
+## Subtitle
+
+Lorem ipsum dolor sit amet, reference ^[@keyword].
+
+### Subsubtitle
+
+Lorem bla bla bla... $\text{inline } m^a \cdot th = \text{mod} e$
+
+$$
+\Bbb{B}igger ~~m^a \cdot th = \text{mod} e
+$$
+
+::: {#lst-code}
+
+``` {.python }
+print("This is some code!")
+```
+This is the caption!
+:::
+
+I'm referencing (@lst-code)!
+
+::: {#refs}
+:::

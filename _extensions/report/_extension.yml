@@ -1,0 +1,57 @@
+title: Simple UdL Report Template
+author: Naïm Saadi
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    pdf:
+      pdf-engine: pdflatex
+      documentclass: article
+      mainfont: "Liberation Serif"
+      monofont: "Liberation Mono"
+      fontsize: 11pt
+      geometry: "margin=2.5cm"
+      colorlinks: true
+      linkcolor: blue
+      urlcolor: blue
+      fig-pos: H
+      callout-appearance: simple
+      indent: true
+      include-in-header:
+        text: |
+          \usepackage{titling}
+          \makeatletter
+          \renewcommand{\maketitle}{
+            \begin{titlepage}
+              \vspace*{\fill}
+              \begin{center}
+                \includegraphics[width=5cm]{figures/logo.png}\\[1.5cm]
+                \vskip -3em
+                {\LARGE\bfseries \@title \par}
+                \vskip 1em
+                {\large
+                  \lineskip .5em
+                  \begin{tabular}[t]{c}
+                    \@author
+                  \end{tabular}\par}
+                \vskip 1em
+                {\large \@date}
+              \end{center}
+              \vspace*{\fill}
+            \end{titlepage}
+          }
+          \makeatother
+
+          \usepackage{titlesec}
+          \titlespacing*{\section}{0pt}{0.5em plus .2em minus .2em}{0.3em}
+          \titlespacing*{\subsection}{0pt}{0.3em plus .1em minus .1em}{0.2em}
+
+          \setlength{\parskip}{0.4em}
+          \setlength{\parindent}{5pt}
+          \usepackage{appendix}
+          
+          \let\oldlistoffigures\listoffigures
+          \renewcommand{\listoffigures}{\oldlistoffigures\clearpage}
+          
+          \let\oldtableofcontents\tableofcontents
+          \renewcommand{\tableofcontents}{\oldtableofcontents\IfFileExists{\jobname.lof}{}{\clearpage}}
