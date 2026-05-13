@@ -5,4 +5,4 @@ clean:
 preview: clean
 	quarto preview *.qmd
 render: clean
-	quarto render *.qmd --to pdf
+	quarto render *.qmd
