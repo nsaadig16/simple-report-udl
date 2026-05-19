@@ -3,3 +3,4 @@ output/
 /.quarto/
 **/*.quarto_ipynb
 template_files
+output
